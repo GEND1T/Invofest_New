@@ -19,8 +19,8 @@ export const NavBarLink: React.FC<NavLinkProps> = ({
     return(
         <NavLink
         to={href}
-        className={({isActive}) =>
-         `flex items-ceter gap-2 px-4 py-2 font-medium transition-all duration-200 ${isActive ? activeStyle : defaultStyle}`}>
+        className={({ isActive: linkIsActive }) =>
+         `flex items-center gap-2 px-4 py-2 font-medium transition-all duration-200 ${linkIsActive || isActive ? activeStyle : defaultStyle}`}>
             {icon && <span className="w-5 h-5">{icon}</span>}
             <span>{label}</span>
         </NavLink>
